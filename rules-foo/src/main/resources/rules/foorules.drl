@@ -1,0 +1,14 @@
+package com.fsecure.droolsenumrepro.rules.foo
+
+import com.fsecure.droolsenumrepro.rules.common.FooEnum
+
+declare FooStruct
+    foo: FooEnum
+end
+
+rule "foorule"
+when
+    $foo: FooStruct(foo == FooEnum.A)
+then
+    System.out.println("foo!");
+end
